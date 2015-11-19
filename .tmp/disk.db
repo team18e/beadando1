@@ -1,0 +1,192 @@
+{
+  "data": {
+    "user": [
+      {
+        "surname": "l",
+        "forename": "l",
+        "username": "l",
+        "password": "$2a$10$sKoZJeCWBHT7CeCQjFAcO.kZlLOSmGHcTXs9sM..KgviVQH8auFL2",
+        "role": "riporter",
+        "createdAt": "2015-11-12T19:21:17.320Z",
+        "updatedAt": "2015-11-12T19:21:17.320Z",
+        "id": 1
+      },
+      {
+        "surname": "Papp",
+        "forename": "Laura",
+        "username": "reluxa",
+        "password": "$2a$10$n2Okix/hyVGu.XZgYiPLuu2rKE.aZXKKlTSFIDgstwVjL.uET5AN6",
+        "role": "riporter",
+        "createdAt": "2015-11-13T14:26:04.313Z",
+        "updatedAt": "2015-11-13T14:26:04.313Z",
+        "id": 2
+      }
+    ],
+    "ertek": [
+      {
+        "nev": "dddddd",
+        "datum": "1999-01-01T00:00:00.000Z",
+        "ertek": 5000,
+        "kiadas": true,
+        "user": 1,
+        "createdAt": "2015-11-12T19:25:21.455Z",
+        "updatedAt": "2015-11-12T19:26:27.480Z",
+        "id": 2
+      }
+    ],
+    "teendo": [
+      {
+        "mit": "Bevásárlás",
+        "mikor": "2015-11-15T00:00:00.000Z",
+        "ki": "Janika",
+        "surgos": false,
+        "user": 1,
+        "createdAt": "2015-11-12T20:34:33.030Z",
+        "updatedAt": "2015-11-12T20:35:49.263Z",
+        "id": 1
+      },
+      {
+        "mit": "Betonozni",
+        "mikor": "2015-11-13T00:00:00.000Z",
+        "ki": "Fátter",
+        "surgos": true,
+        "user": 1,
+        "createdAt": "2015-11-12T20:41:34.384Z",
+        "updatedAt": "2015-11-12T20:41:34.384Z",
+        "id": 3
+      },
+      {
+        "mit": "pisi",
+        "mikor": "2015-11-13T00:00:00.000Z",
+        "ki": "lau",
+        "surgos": false,
+        "user": 2,
+        "createdAt": "2015-11-13T14:26:40.784Z",
+        "updatedAt": "2015-11-13T14:26:40.784Z",
+        "id": 4
+      }
+    ]
+  },
+  "schema": {
+    "user": {
+      "username": {
+        "type": "string",
+        "unique": true
+      },
+      "password": {
+        "type": "string"
+      },
+      "surname": {
+        "type": "string"
+      },
+      "forename": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string",
+        "enum": [
+          "riporter",
+          "operator"
+        ],
+        "defaultsTo": "riporter"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "ertek": {
+      "nev": {
+        "type": "string"
+      },
+      "datum": {
+        "type": "date"
+      },
+      "ertek": {
+        "type": "integer"
+      },
+      "kiadas": {
+        "type": "boolean",
+        "enum": [
+          "true",
+          "false"
+        ],
+        "defaultsTo": false
+      },
+      "user": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "user"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "teendo": {
+      "mit": {
+        "type": "string"
+      },
+      "mikor": {
+        "type": "date"
+      },
+      "ki": {
+        "type": "string"
+      },
+      "surgos": {
+        "type": "boolean",
+        "enum": [
+          "true",
+          "false"
+        ],
+        "defaultsTo": false
+      },
+      "user": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "user"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "user": {
+      "id": 2
+    },
+    "ertek": {
+      "id": 2
+    },
+    "teendo": {
+      "id": 4
+    }
+  }
+}

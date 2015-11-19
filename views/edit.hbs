@@ -1,0 +1,55 @@
+<h1>ToDo szerkesztése</h1>
+<form class="form-horizontal col-lg-8 col-lg-offset-2"
+      method="post" action="/edit/:id">
+  <fieldset>
+    <div class="form-group">
+      <label for="mit" class="col-lg-2 control-label">Mit: </label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" 
+               name="mit" id="mit" 
+               value="{{targy.mit}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="mikor" class="col-lg-2 control-label">Mikor: </label>
+      <div class="col-lg-10">
+        <input type="datetime" class="form-control" 
+               name="mikor" id="mikor"				
+			   value="{{targy.getLocalDate}}">
+      </div>
+    </div>
+	<div class="form-group">
+      <label for="ki" class="col-lg-2 control-label">Ki: </label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" 
+               name="ki" id="ki" 
+               value="{{targy.ki}}">
+      </div>
+    </div>
+	<div class="form-group">
+      <label for="surgos" class="col-lg-2 control-label">Sürgős*: </label>
+      <div class="col-lg-10">
+         <table>
+          <tr>
+            <td class="col-lg-3">
+              <input type="checkbox" class="form-control" name="surgos" id="surgos"  {{#if targy.surgos}} checked>
+            </td>
+            <td class="col-lg-3">
+              <p style="font-size: 12px; float: right">(Sürgős teendő esetén bejelölni!)</p>
+            </td>
+          </tr>
+        </table>
+				{{/if}}
+      </div>
+    </div>
+	
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <a href="/list" class="btn btn-default pull-left">Mégse</a>
+        <button type="submit" class="btn btn-success pull-right">Módosítás</button>
+        <a class="col-lg-10 col-lg-offset-2"> </a>
+		<a href="/delete/{{targy.id}}" class="btn btn-danger pull-right">Eltávolítás</a>
+      </div>
+    </div>
+  </fieldset>
+</form>
