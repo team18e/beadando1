@@ -70,16 +70,16 @@ Azonosított felhasználó:
         
 b) Végpontok
 
-GET /: főoldal
-GET /login: bejelentkező oldal
-POST /login: bejelentkezési adatok felküldése
-GET /signup: regisztrációs oldal
-POST /signup: regisztrációs adatok felküldése
-GET /list: saját értéklista oldal
-GET /add: új teendo felvitele
-POST /add: új teendo felvitele, adatok küldése
-GET /edit/:id: teendo adatai
-POST /edit/:id: teendo módosítása
+- GET /: főoldal
+- GET /login: bejelentkező oldal
+- POST /login: bejelentkezési adatok felküldése
+- GET /signup: regisztrációs oldal
+- POST /signup: regisztrációs adatok felküldése
+- GET /list: saját értéklista oldal
+- GET /add: új teendo felvitele
+- POST /add: új teendo felvitele, adatok küldése
+- GET /edit/:id: teendo adatai
+- POST /edit/:id: teendo módosítása
             
 ** Felhasználóifelület-modell **
 
